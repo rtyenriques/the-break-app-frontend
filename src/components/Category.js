@@ -7,7 +7,8 @@ const Categories = (props) => {
            <h1>Categories</h1>
   
            
-           {props.categories.map(c => <li key={c.id}>{c.name}</li>)}
+           {props.categories.map(c => <li key={c.id}>{c.name}</li>
+           )}
             
         </div>
     )
