@@ -1,5 +1,7 @@
 import React from 'react'
-import Category from './Category'
+import { Link } from 'react-router-dom'
+// import categoryReducer from '../reducers/categoryReducer'
+// import Category from './Category'
 
 
 const Categories = (props) => {
@@ -9,8 +11,10 @@ const Categories = (props) => {
            <h1>Categories</h1>
   
            
-           {props.categories.map(c => 
-           <div key={c.id}><Category category={c} /></div>
+           {props.categories.map(category => 
+           <div key={category.id}>
+               <Link to={`categories/${category.id}`}>{category.name}</Link>
+            </div>
            )}
            
         </div>
