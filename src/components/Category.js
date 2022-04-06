@@ -1,17 +1,19 @@
 import React from 'react'
 
-const Categories = (props) => {
+const Category = (props) => {
 
-    return (
+let category = props.categories[props.match.params.id - 1]
+console.log(category)
+    return(
         <div>
-           <h1>Categories</h1>
-  
-           
-           {props.categories.map(c => <li key={c.id}>{c.name}</li>
-           )}
-            
+            <li>
+               {category ? category.name : null}
+              
+            </li>
         </div>
     )
+
+
 }
 
-export default Categories
+export default Category
