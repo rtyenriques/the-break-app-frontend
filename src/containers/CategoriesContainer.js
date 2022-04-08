@@ -19,7 +19,7 @@ class CategoriesContainer extends React.Component {
              <Switch>
                  <Route path='/categories/new' component={CategoryInput} />
                  <Route path='/categories/:id' render={(routerProps) => <Category {...routerProps} categories={this.props.categories}/>} />
-                <Route exact path='/categories' render={(routerProps) => <Categories {...routerProps}  categories={this.props.categories}/>} />
+                <Route path='/categories' render={(routerProps) => <Categories {...routerProps}  categories={this.props.categories}/>} />
                 {/* <Categories categories={this.props.categories}/> */}
           </Switch>
                 

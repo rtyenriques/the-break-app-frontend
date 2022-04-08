@@ -13,7 +13,7 @@ const Categories = (props) => {
            
            {props.categories.map(category => 
            <div key={category.id}>
-               <Link to={`categories/${category.id}`}>{category.name}</Link>
+               <Link to={`${category.id}`}>{category.name}</Link>
             </div>
            )}
            

@@ -4,7 +4,10 @@ import ArticlesContainer from '../containers/ArticlesContainer'
 
 const Category = (props) => {
 
-let category = props.categories[props.match.params.id - 1]
+// let category = props.categories[props.match.params.id - 1]
+// if want to filter :id by appropriate id not order
+
+let category = props.categories.filter(category => category.id == props.match.params.id)[0]
 console.log(category)
     return(
         <div>

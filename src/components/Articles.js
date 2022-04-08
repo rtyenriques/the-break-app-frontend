@@ -4,7 +4,12 @@ const Articles = (props) => {
     
     return(
         <div>
-            Article
+          
+            {props.articles && props.articles.map(article =>
+                <li key={article.id}>
+                   {article.title} - {article.body}
+                </li>
+                )}
         </div>
     )
 

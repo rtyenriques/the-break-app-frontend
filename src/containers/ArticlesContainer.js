@@ -10,7 +10,7 @@ class ArticlesContainer extends React.Component {
       return(
           <div>
         
-                <ArticleInput/>
+                <ArticleInput category={this.props.category}/>
                 <Articles articles={this.props.category && this.props.category.articles}/>
           </div>
       )
