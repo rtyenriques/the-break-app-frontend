@@ -12,7 +12,7 @@ Prerequisites
 
 Installation
 ---------------
-1. Clone this repo in respected folder using terminal, git clone "https://github.com/rtyenriques/the-break-appfrontend"
+1. Clone this repo in respected folder using terminal, git clone "https://github.com/rtyenriques/the-break-app-frontend"
 2. cd into cloned file
 3. Open file (if using vscode code make sure you npm install then npm start, if using backend with localhost://3000 then this port will be at localhost://3001
 4. It should then open up webpage displaying code
