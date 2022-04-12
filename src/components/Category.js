@@ -1,21 +1,27 @@
 import React from 'react'
-// import { Redirect } from 'react-router-dom'
 import ArticlesContainer from '../containers/ArticlesContainer'
+// import CategoryEdit from './CategoryEdit'
+
+
 
 const Category = (props) => {
 
-// let category = props.categories[props.match.params.id - 1]
-// if want to filter :id by appropriate id not order
+    // let category = props.categories[props.match.params.id - 1]
+    // if want to filter :id by appropriate id not order
+    // debugger
+    const newNum = parseInt(props.match.params.id,10)
+    const category = props.categories.filter(category => category.id === newNum)[0]
+    console.log(category)
 
-let category = props.categories.filter(category => category.id == props.match.params.id)[0]
-console.log(category)
-    return(
+
+    return (
         <div>
             <h2>
-                {/* {category ? null : <Redirect to='/categories'/>} */}
-               {category ? category.name : null}
+                {category ? category.name : null}
             </h2>
-            <ArticlesContainer category={category}/>
+            <ArticlesContainer category={category} />
+            {/* <CategoryEdit category={category} /> */}
+
         </div>
     )
 

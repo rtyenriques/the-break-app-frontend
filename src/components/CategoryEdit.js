@@ -1,11 +1,12 @@
+
 import React from 'react'
 import { connect } from 'react-redux'
-import { addCategory } from '../actions/addCategory'
-import Categories from './Categories'
+import { editCategory } from '../actions/editCategory'
 
-class CategoryInput extends React.Component {
 
-    state = { name: '' }
+class CategoryEdit extends React.Component {
+
+    state = ''
 
     handleChange = (event) => {
         this.setState({
@@ -15,23 +16,22 @@ class CategoryInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addCategory(this.state)
+        let category = { ...this.state, id: this.props.category.id }
+        this.props.editCategory(category)
         this.setState({
             name: ''
         })
-        this.props.history.push("/categories")
-
-
     }
+
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Category Name:</label>
+                    <label>Edit Category Name:</label>
                     <input type='text'
 
-                        placeholder='name'
+                        placeholder={this.props.name}
                         value={this.state.name}
                         name='name'
                         onChange={this.handleChange}
@@ -40,10 +40,10 @@ class CategoryInput extends React.Component {
                     <input type='submit' />
 
                 </form>
-                <Categories/>
             </div>
         )
     }
 }
 
-export default connect(null, { addCategory })(CategoryInput);
+
+export default connect(null, { editCategory })(CategoryEdit);
