@@ -25,13 +25,14 @@
   
  }
  
- .navbar navbar-expand-lg navbar-light{
-   background-color: black;
+ #mainNav.navbar.navbar-expand-lg.navbar-light{
+
  }
 
  .category-edit{
   position: relative;
   padding: 110px 350px 28px ;
+
  }
 
 

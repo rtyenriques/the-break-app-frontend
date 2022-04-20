@@ -47,8 +47,9 @@ class CategoryEdit extends React.Component {
 
     render() {
         return (
-            <div className='category-edit'>
-                <form onSubmit={this.handleSubmit}>
+            <div>
+                <h1 className='header-title'>The Break App</h1>
+                <form className='category-edit' onSubmit={this.handleSubmit}>
                     <label>Edit Category Name:</label>
                     <input type='text'
 
