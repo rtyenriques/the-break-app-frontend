@@ -6,7 +6,14 @@ import { editCategory } from '../actions/editCategory'
 
 class CategoryEdit extends React.Component {
 
-    state = ''
+    // state = ''
+    constructor(props) {
+        super(props);
+        this.state =  ''
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
 
     handleChange = (event) => {
         this.setState({
@@ -15,18 +22,24 @@ class CategoryEdit extends React.Component {
     }
 
     handleSubmit = (event) => {
+        
         event.preventDefault()
-        let category = { ...this.state, id: this.props.category.id }
+       
+        // this.props.match.params.id
+        // this.props.category.id
+        let category = { ...this.state, id:   this.props.match.params.id}
         this.props.editCategory(category)
         this.setState({
             name: ''
         })
+        let path = `/categories/${this.props.match.params.id}`
+        this.props.history.push(path, {state: category})
     }
 
 
     render() {
         return (
-            <div>
+            <div className='category-edit'>
                 <form onSubmit={this.handleSubmit}>
                     <label>Edit Category Name:</label>
                     <input type='text'
@@ -45,5 +58,11 @@ class CategoryEdit extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        categories: state.categories
+    }
+}
 
-export default connect(null, { editCategory })(CategoryEdit);
+
+export default connect(mapStateToProps, { editCategory })(CategoryEdit);

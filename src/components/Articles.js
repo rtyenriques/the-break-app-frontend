@@ -11,13 +11,19 @@ const Articles = (props) => {
 
     return (
         <div>
-
+            <br></br>
+            <h2>Articles</h2><br></br>
             {props.articles && props.articles.map(article =>
-                <li key={article.id}>
-                    {article.title} - {article.body}
+                <article key={article.id}>
+                    <h3>{article.title}</h3> 
+                    <h4>By:{article.author}</h4>
+                    <img alt= '' src={article.image}/>
+                    <p>{article.body} </p>
+                    
                     <button onClick={() => handleDelete(article)}>Delete</button>
-                </li>
-            )}
+                </article>
+            )} 
+
         </div>
     )
 

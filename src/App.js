@@ -2,11 +2,14 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import CategoriesContainer from './containers/CategoriesContainer';
-import Homepage  from './components/homepage';
+import Homepage  from './components/Homepage';
 import { About } from './components/About';
 import Navbar from './navigation/navbar';
 import { Title } from './components/Title';
 import { Contact } from './components/Contact';
+import './css/styles.css'
+
+
 class App extends React.Component {
 
 
@@ -14,6 +17,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Title/>
+        {/* <img src={process.env.PUBLIC_URL + '/bboy'} />  */}
+       
         <Navbar/>
         
         <Switch>

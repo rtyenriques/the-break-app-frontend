@@ -6,6 +6,7 @@ import ArticlesContainer from '../containers/ArticlesContainer'
 
 const Category = (props) => {
 
+
     // let category = props.categories[props.match.params.id - 1]
     // if want to filter :id by appropriate id not order
     // debugger
@@ -16,9 +17,9 @@ const Category = (props) => {
 
     return (
         <div>
-            <h2>
+            <h1 className='header-title'>
                 {category ? category.name : null}
-            </h2>
+            </h1>
             <ArticlesContainer category={category} />
             {/* <CategoryEdit category={category} /> */}
 

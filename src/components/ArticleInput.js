@@ -6,8 +6,10 @@ class ArticleInput extends React.Component {
 
     state = {
         title: '',
-        body: ''
-    }
+        body: '',
+        author:'',
+        image:''
+        }
 
     handleChange = (event) => {
 
@@ -22,7 +24,9 @@ class ArticleInput extends React.Component {
         this.props.addArticle(this.state, this.props.category.id)
         this.setState({
             title: '',
-            body: ''
+            body: '',
+            author: '',
+            image: ''
         })
     }
 
@@ -31,11 +35,16 @@ class ArticleInput extends React.Component {
             <div>
                 <br></br>
                 <h5>Create an Article</h5>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Title</label>
+                <form className="article-form" onSubmit={this.handleSubmit}>
+                    <label>Title:</label>
                     <input type='text' name='title' value={this.state.title} onChange={this.handleChange} /><br></br>
-                    <label>Body</label>
-                    <input type="textarea" name="body" value={this.state.body} onChange={this.handleChange} /><br></br>
+                    <label>Body:</label>
+                    {/* <input type="textarea" name="body" value={this.state.body} onChange={this.handleChange} /><br></br> */}
+                    <textarea name="body" value={this.state.body} onChange={this.handleChange} /><br></br>
+                    <label>Author:</label>
+                    <input type="text" name="author" value={this.state.author} onChange={this.handleChange} /><br></br>
+                    <label>Image:</label>
+                    <input type="text" name="image" value={this.state.image} onChange={this.handleChange} /><br></br>
                     {/* <textarea name="body" value={this.state.body} onChange={this.handleChange}  /> */}
                     <input type='submit' /><br></br>
                 </form>

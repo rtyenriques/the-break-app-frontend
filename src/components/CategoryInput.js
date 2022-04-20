@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addCategory } from '../actions/addCategory'
-import Categories from './Categories'
+// import Categories from './Categories'
 
 class CategoryInput extends React.Component {
 
@@ -26,7 +26,11 @@ class CategoryInput extends React.Component {
 
     render() {
         return (
-            <div>
+           
+            <div className='category-form'>
+       
+                <h4>Create a Category</h4>
+              
                 <form onSubmit={this.handleSubmit}>
                     <label>Category Name:</label>
                     <input type='text'
@@ -40,7 +44,7 @@ class CategoryInput extends React.Component {
                     <input type='submit' />
 
                 </form>
-                <Categories/>
+              
             </div>
         )
     }
