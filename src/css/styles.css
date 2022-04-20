@@ -22,6 +22,11 @@
  .category-form {
   position: relative;
   padding: 110px 350px 28px ;
+  
+ }
+ 
+ .navbar navbar-expand-lg navbar-light{
+   background-color: black;
  }
 
  .category-edit{

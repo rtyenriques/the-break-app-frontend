@@ -27,7 +27,7 @@ const Categories = (props) => {
         <div>
            <h1 className='header-title'>Categories</h1>
   
-           <Link to='/categories/new'><button id='create-category-button'>create new category</button></Link>
+           <Link to='/categories/new'><button id='create-category-button'><b>Create a Category</b></button></Link>
            
            {props.categories.map(category => 
            <div key={category.id}>
