@@ -1,24 +1,18 @@
 import React from 'react'
 import { Link, } from 'react-router-dom'
-// import categoryReducer from '../reducers/categoryReducer'
-// import Category from './Category'
 import { connect } from 'react-redux'
 import { deleteCategory } from '../actions/deleteCategory'
 import { editCategory } from '../actions/editCategory'
-// import CategoryEdit from './CategoryEdit'
 
 
 
 const Categories = (props) => {
-
-
+  
     const handleDelete = (category) => {
-       
-     props.deleteCategory(category.id)
-  }
+        props.deleteCategory(category.id)
+     }
     
     const renderEdit = (category) => {
-      
        let path = `/categories/${category.id}/edit`
        props.history.push(path, {state: category})
     }
@@ -41,8 +35,6 @@ const Categories = (props) => {
            
         </div>
     )
-
-    
 }
 
 const mapStateToProps = state => {
@@ -50,6 +42,5 @@ const mapStateToProps = state => {
         categories: state.categories
     }
 }
-
 
 export default connect(mapStateToProps, {deleteCategory, editCategory}) (Categories)

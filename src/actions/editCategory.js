@@ -1,8 +1,6 @@
 export const editCategory = (data) => {
-
-    return (dispatch) => {
-
-        fetch(`http://localhost:3000/api/v1/categories/${data.id}`, {
+     return (dispatch) => {
+         fetch(`http://localhost:3000/api/v1/categories/${data.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
